@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Blockchain Certificate Verification</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="stylesheets/new.css">
+</head>
+
+<body class="bg-light">
+
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/home"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+      aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+
+      </ul>
+
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+
+        <li class="nav-item text-nowrap dropdown">
+          <a class="nav-link dropdown-toggle " href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Member</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="/home">Logout</a>
+            <!-- <a class="dropdown-item" href="/partner">Partner</a> -->
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Login Section :: by default display should be block -->
+  <div class="jumbotron" id="loginSection" style="display:none;">
+    <div class="container">
+      <h2 class="sign-in">Member Sign In</h2>
+      <br>
+      <div class="partner-id">
+        <p class="sign-in"> Enter Member ID
+          <input>
+        </p>
+      </div>
+      <div class="card-id">
+        <p class="sign-in"> Enter Access Card ID
+          <input>
+        </p>
+      </div>
+      <button class="btn btn-primary sign-in-member">SIGN IN</button>
+    </div>
+  </div>
+
+  <!-- Members area Section :: by default display should be none -->
+  <div class="row" id="transactionSection" style="display:none;">
+
+    <div class="jumbotron" id="headSection" style="display:block;">
+      <div class="container">
+        <table>
+          <tr>
+            <td>
+              <div style="padding-right: 20px">
+                <h2>Name :</h2>
+                <h2>ID :</h2>
+              </div>
+            </td>
+            <td>
+              <div class="heading"> </div>
+            </td>
+          </tr>
+        </table>
+        <!--div class="heading"> </div-->
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Tabs Header -->
+      <div class="row">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item tab-width">
+            <a class="nav-link active" id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab"
+              aria-controls="earn" aria-selected="true"><b>Dashboard</b></a>
+          </li>
+          <li class="nav-item tab-width">
+            <a class="nav-link" id="transactions-tab" data-toggle="tab" href="#transactions" role="tab"
+              aria-controls="transactions" aria-selected="false"><b>Upload Certificate</b></a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tab contents -->
+      <div class="container row">
+        <div class="tab-content" id="myTabContent">
+          <!-- Contents for the Dashboad Tab -->
+          <div class="tab-pane fade show active row" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+            <!-- <div class="dashboards .table-responsive"> -->
+            <br>
+            <!-- <table id="studentTable" class="table table-striped table-bordered order-column" style="width:100%"> -->
+            <table class="table table-striped table-bordered order-column" style="width:100%">
+              <thead class="thead-dark">
+                <tr>
+                  <th>#</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Hash Code</th>
+                  <th>#</th>
+                </tr>
+              </thead>
+              <tbody class="data-for-table">
+              </tbody>
+            </table>
+            <!-- </div> -->
+          </div>
+
+          <!-- Content fot the Members Tab -->
+          <div class="tab-pane fade" id="transactions" role="tabpanel" aria-labelledby="transactions-tab">
+            <br>
+
+            <!-- Upload Certificate Form -->
+            <p>
+              <h2> Select Certificate to Upload </h2>
+            </p>
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="customFile">
+              <label class="custom-file-label" for="customFile">Choose file</label>
+            </div><br><br>
+
+            <!-- <div> -->
+            <label for="firstName"><b>Student First Name</b></label>
+            <div class="firstName">
+              <input type="text" class="form-control" id="firstName" placeholder="" required>
+              <div class="invalid-feedback" style="width: 100%;">
+                Valid first name is required.
+              </div>
+            </div>
+
+            <br>
+
+            <label for="lastName"><b>Student Last Name</b></label>
+            <div class="lastName">
+              <input type="text" class="form-control" id="lastName" placeholder="" required>
+              <div class="invalid-feedback" style="width: 100%;">
+                Valid last name is required.
+              </div>
+            </div>
+
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block upload-cert cert-upload-btn" type="submit">Upload Certificate</button>
+            <!-- </div> -->
+            <br><br>
+            <hr>
+          </div>
+
+        </div>
+        <hr class="featurette-divider">
+      </div>
+
+      <!-- <div class="container text-center">
+        <div class="loader" id="loader" style="display:none;"></div>
+      </div> -->
+
+      <div class="container text-center" id="successful-registration" style="display:none;">
+        <h4>Data successfully registered on the blockchain network</h4>
+        <hr class="featurette-divider">
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="container text-center">
+    <div class="loader" id="loader" style="display:none;"></div>
+  </div>
+
+</body>
+
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+  integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+  integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/ipfs/dist/index.min.js"></script>
+<script src="/scripts/member.js"></script>
+<script src="/scripts/register.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+<script>
+  // Add the following code if you want the name of the file appear on select
+  $(".custom-file-input").on("change", function () {
+    var fileName = $(this).val().split("\\").pop();
+    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+  })
+
+  $(document).ready(function () {
+    $('#studentTable').DataTable();
+  });
+
+  function myFunc(params) {
+    console.log(params)
+    const node = new Ipfs()
+    node.once('ready', () => {
+      node.cat(params, (err, data) => {
+        if (err) return console.error(err)
+
+        // convert Buffer back to string
+        console.log(data.toString())
+
+        let dataurl = data.toString()
+        var arr = dataurl.split(',');
+        var mime = arr[0].match(/:(.*?);/)[1];
+
+        console.log(mime);
+
+        var blob = converBase64toBlob(arr[1], mime);
+        var blobURL = URL.createObjectURL(blob);
+        window.open(blobURL);
+      })
+    })
+  }
+
+  //Function to Convert the base64 String to blob data
+  function converBase64toBlob(content, contentType) {
+    contentType = contentType || '';
+    var sliceSize = 512;
+    var byteCharacters = window.atob(content); //method which converts base64 to binary
+    var byteArrays = [];
+    for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+      var slice = byteCharacters.slice(offset, offset + sliceSize);
+      var byteNumbers = new Array(slice.length);
+      for (var i = 0; i < slice.length; i++) {
+        byteNumbers[i] = slice.charCodeAt(i);
+      }
+      var byteArray = new Uint8Array(byteNumbers);
+      byteArrays.push(byteArray);
+    }
+    var blob = new Blob(byteArrays, {
+      type: contentType
+    }); //statement which creates the blob
+    return blob;
+  }
+
+</script>

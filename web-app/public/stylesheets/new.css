@@ -1,0 +1,169 @@
+.jumbotron {
+    background-color: #159957;
+    background-image: linear-gradient(120deg, #155799, #159957);
+}
+
+.display-4 {
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+
+.jumbotron .container .header {
+    color: white;
+    text-align: center;
+    opacity: 0.7;
+    font-size: 1.25rem;
+    font-weight: 200;
+    margin-top: 30px;
+    margin-bottom: 50px;
+
+}
+
+.jumbotron .container .buttons {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.3rem;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+}
+
+.btn-primary:hover {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-home:hover{
+    color: #fff;
+    background-color: #20aa5e;
+
+}
+
+.col-lg-6 {
+    background-color: transparent !important;
+    padding: 20px;
+    color: #606c71;
+}
+
+.col-lg-6 h2{
+    color: #159957;
+}
+
+.col-lg-6 a{
+    background-color: #159957;
+    color: #fff;
+}
+
+
+.right-col h2,
+.left-col h2,
+.description {
+    margin-bottom: 30px;
+}
+
+.right-col .description {
+    margin-bottom: 37px;
+}
+
+.row {
+    border-radius: .3rem;
+    font-weight: 300;
+}
+
+.btn-padding {
+    margin: 10px 10px 0 10px;
+}
+
+.description {
+    text-align: justify;
+    font-weight: 400;
+}
+
+.about {
+    margin-top: 30px;
+}
+
+.row-background {
+    background-image: #fff;
+    border-style: solid;
+    border-width: thin;
+    border-color: #159957;
+}
+
+.container .row {
+    color: #606c71;
+    font-size: 16px;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.bg-dark {
+    background-color: transparent !important;
+}
+
+.nav-link {
+    color: #fff !important;
+}
+
+.dropdown-item {
+    color: #159957 !important;
+}
+
+.enter-hash {
+    color: white;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.sign-in {
+    color: #fff !important;
+}
+
+.register-member {
+    background-color: #155799 !important;
+    color: #fff !important;
+}
+
+.jumbotron .container .heading h3 {
+    color: #fff !important;
+}
+
+/*Member table background*/
+.table .thead-dark th {
+    background-color: #155799 !important;
+    color: #fff !important;
+    border-color: #fff !important;
+}
+
+/*Member header to white*/
+.row .jumbotron .container table {
+    color: #fff !important;
+}
+
+/*Member Dashboard & Upload certificate*/
+#dashboard-tab,
+#transactions-tab, .register-in {
+    color: #155799 !important;
+}
+
+.data-for-table .btn {
+    background-color: #155799 !important;
+    color: #fff !important;
+}
+
+.cert-upload-btn {
+    background-color: #155799 !important;
+    color: #fff !important;
+}

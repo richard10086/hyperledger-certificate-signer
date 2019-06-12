@@ -1,0 +1,23 @@
+{
+  "name": "certificate-signing-network",
+  "version": "0.1.0",
+  "description": "A Certificate Signing Program network",
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha --recursive"
+  },
+  "author": "Alzahrani Abdulelah",
+  "email": "abdulellah15@gmail.com",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "composer-cli": "^0.20.8",
+    "composer-admin": "^0.20.8",
+    "composer-client": "^0.20.8",
+    "composer-common": "^0.20.8",
+    "composer-connector-embedded": "^0.20.8",
+    "body-parser": "^1.18.2",
+    "composer-playground": "latest",
+    "express": "^4.16.2",
+    "request": "^2.83.0"
+  }
+}

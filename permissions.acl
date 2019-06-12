@@ -1,0 +1,127 @@
+
+
+rule NetworkAdminUser {
+    description: "Grant business network administrators full access to user resources"
+    participant: "org.hyperledger.composer.system.NetworkAdmin"
+    operation: ALL
+    resource: "**"
+    action: ALLOW
+}
+
+rule NetworkAdminSystem {
+    description: "Grant business network administrators full access to system resources"
+    participant: "org.hyperledger.composer.system.NetworkAdmin"
+    operation: ALL
+    resource: "org.hyperledger.composer.system.**"
+    action: ALLOW
+}
+
+rule SystemACL {
+  description:  "System ACL to permit all access"
+  participant: "ANY"
+  operation: ALL
+  resource: "org.hyperledger.composer.system.**"
+  action: ALLOW
+}
+
+
+//////Member Access
+
+// Member can create Certificates
+// rule MemberCanCreateCertificate {    
+//   description: "Allow a participant to create it's own resources"
+//   participant: "org.certsigner.zak.Member"
+//   operation: CREATE
+//   resource: "org.certsigner.zak.CertFile"
+//   action: ALLOW
+// }
+
+// Member can create Certificates
+// rule MemberCanCreateStudent {    
+//   description: "Allow a participant to create it's own resources"
+//   participant: "org.certsigner.zak.Member"
+//   operation: CREATE
+//   resource: "org.certsigner.zak.Student"
+//   action: ALLOW
+// }
+
+// // Member can read Certificates
+// rule MemberCanAccessCertificate {    
+//   description: "Allow a participant to read it's own resources"
+//   participant: "org.certsigner.zak.Member"
+//   operation: READ
+//   resource: "org.certsigner.zak.CertFile"
+//   action: ALLOW
+// }
+
+// // Student can read Certificates
+// rule MemberCanAccessStudent {    
+//   description: "Allow a Member to read it's own Students"
+//   participant(p): "org.certsigner.zak.Member"
+//   operation: ALL
+//   resource(r): "org.certsigner.zak.Student"
+//   condition: (r.owner.getIdentifier() === p.getIdentifier())
+//   action: ALLOW
+// }
+
+
+// Members to have access only to their own accoun
+rule MemberAccessOwnRecord {
+    description: "Allow Member to access only their profile"
+    participant(p): "org.certsigner.zak.Member"
+    operation: ALL
+    resource(r): "org.certsigner.zak.Member"
+    condition: (r.getIdentifier() === p.getIdentifier())
+    action: ALLOW
+}
+
+//Members Not to have access to other member accounts
+rule MemberAccessMembers {
+    description: "Deny Member access to other Member accounts"
+    participant: "org.certsigner.zak.Member"
+    operation: ALL
+    resource: "org.certsigner.zak.Member"
+    action: DENY
+}
+
+//Members to have access only to Certificates transaction where they are the owner
+rule MemberAccessCertificates {
+    description: "Allow Member access only to Certificates where they are the owner"
+    participant(p): "org.certsigner.zak.Member"
+    operation: ALL
+    resource(r): "org.certsigner.zak.CertFile"
+    condition: (r.owner.getIdentifier() === p.getIdentifier())
+    action: ALLOW
+}
+
+
+// //////Student Access
+
+// //Student to have access only to their own account
+// rule StudentAccessOwnRecord {
+//     description: "Allow Student to access only their profile"
+//     participant(p): "org.certsigner.zak.Student"
+//     operation: ALL
+//     resource(r): "org.certsigner.zak.Student"
+//     condition: (r.getIdentifier() === p.getIdentifier())
+//     action: ALLOW
+// }
+
+// //Student Not to have access to other Student accounts
+// rule StudentAccessStudent {
+//     description: "Deny Student access to other Student accounts"
+//     participant: "org.certsigner.zak.Student"
+//     operation: ALL
+//     resource: "org.certsigner.zak.Student"
+//     action: DENY
+// }
+
+// //Student to have access only to Certificates transaction where they are the owner
+// rule StudentAccessCertificates {
+//     description: "Allow Student access only to Certificates transaction where they are the owner"
+//     participant(p): "org.certsigner.zak.Student"
+//     operation: ALL
+//     resource(r): "org.certsigner.zak.CertFile"
+//     condition: (r.owner.getIdentifier() === p.getIdentifier())
+//     action: ALLOW
+// }

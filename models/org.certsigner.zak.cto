@@ -1,0 +1,35 @@
+
+/**
+ * Write your model definitions here
+ */
+
+namespace org.certsigner.zak
+
+
+//members identified by email
+participant Member identified by memberId {
+  o String memberId
+  o String name
+}
+
+asset CertFile identified by fileHash {
+  o String fileName
+  o String fileHash
+  o String firstName
+  o String lastName
+  --> Member owner
+}
+
+
+transaction CertTransfer {
+  --> CertFile cert
+  --> Member newOwner
+}
+
+/**
+ * A notification event to be emitted whenever
+ * any University transfers a certificate to a student
+ */
+event CertTransferNotification {
+  --> CertFile cert
+}

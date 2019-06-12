@@ -1,0 +1,13 @@
+
+
+query selectMembers {
+  description: "Select all members"
+  statement:
+      SELECT org.certsigner.zak.Member
+}
+
+query selectCertificates {
+  description: "Select all certificate"
+  statement:
+      SELECT org.certsigner.zak.CertFile WHERE (owner == _$owner)
+}
